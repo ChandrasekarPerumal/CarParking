@@ -1,8 +1,8 @@
 
-Instructions to followed:
-1.First create the space using 1st end-point
-2.Add some colors data
-3.Then check the other endpoints
+Instructions to followed:<br>
+1.First create the space using 1st end-point<br>
+2.Add some colors data<br>
+3.Then check the other endpoints<br>
 
 REST API Endpoints:
 
