@@ -1,5 +1,7 @@
 Based on instructions I have created and applied logics.
 
+Output screen:
+
  *** Welcome to Car Parking Application ***
 
  Choose the menu 
@@ -10,6 +12,10 @@ Based on instructions I have created and applied logics.
  registration_numbers_for_cars_with_colour 
  registration_number_for_slot_number 
  slot_numbers_by_registrat_num 
+
+
+
+Instructions are given below:
 
 Input :
 1.  $ create_parking_lot 7
