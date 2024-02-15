@@ -31,7 +31,6 @@ public class ParkingLotService {
 		// To serve the nearest park slot
 		for (int i = 1; i <= totalCapacity; i++) {
 			parkingSlots.put(i, null);
-			System.out.println(parkingSlots);
 		}
 	}
 
@@ -55,7 +54,7 @@ public class ParkingLotService {
 		slotNumbersByRegistration = new HashMap<>();
 		slotNumbersByColor = new HashMap<>();
 		slotInitialization();
-//		statusOfParking();
+
 	}
 
 	public boolean isAlreadyPark(String regNo) {
@@ -91,14 +90,74 @@ public class ParkingLotService {
 		}
 	}
 
-	/*
-	 * Delete
-	 * 
-	 * public void clearSlot(int slotNumber) { if (slotNumber <= totalCapacity &&
-	 * slotNumber > 0) { if (parkingSlots.get(slotNumber) != null) {
-	 * deleteDataInMaps(slotNumber); parkingSlots.put(slotNumber, null);
-	 * System.out.println("Slot number " + slotNumber + " is free "); } else {
-	 * System.out.println("Already Slot number " + slotNumber + " is free"); } }
-	 * else { System.out.println("No such slot number with :" + slotNumber); } }
-	 */
+	public String clearSlot(int slotNumber) {
+		if (slotNumber <= totalCapacity && slotNumber > 0) {
+			if (parkingSlots.get(slotNumber) != null) {
+				deleteDataInMaps(slotNumber);
+				parkingSlots.put(slotNumber, null);
+				return "Slot number " + slotNumber + " is free ";
+			} else {
+				return "Already Slot number " + slotNumber + " is free";
+			}
+		} else {
+			return "No such slot number with :" + slotNumber;
+		}
+	}
+
+	private void deleteDataInMaps(int slotNumber) {
+		CarTicket carTicket = parkingSlots.get(slotNumber);
+		String color = carTicket.getColor();
+		Set<Integer> slotNumsSet = new HashSet<>();
+		slotNumsSet = slotNumbersByColor.get(color);
+
+		if (slotNumsSet.contains(slotNumber)) {
+			slotNumsSet.remove(slotNumber);
+			slotNumbersByColor.remove(color);
+
+			if (slotNumsSet.isEmpty()) {
+				slotNumbersByColor.remove(color);
+			} else {
+				slotNumbersByColor.put(color, slotNumsSet);
+			}
+		}
+		slotNumbersByRegistration.remove(carTicket.getRegNo());
+	}
+
+	public String carRegNoByColour(String carColor) {
+
+		StringBuilder response = new StringBuilder();
+		if (slotNumbersByColor.containsKey(carColor)) {
+			// If the car colour exist in our List
+			Set<Integer> slotNumberSet = slotNumbersByColor.get(carColor);
+			for (int slotNumber : slotNumberSet) {
+				if (parkingSlots.get(slotNumber) != null) {
+					response.append(parkingSlots.get(slotNumber).getRegNo() + "  ");
+				}
+			}
+			return response.toString();
+		} else {
+			return "No such colour car is in Parking";
+		}
+	}
+
+	public int getSlotNumberByRegNo(String regno) {
+
+		if (slotNumbersByRegistration.containsKey(regno)) {
+			int slotNumber = slotNumbersByRegistration.get(regno);
+			return slotNumber;
+		}
+		return 0;
+	}
+
+	public Set<Integer> getSlotNumbersByColor(String color) {
+
+		Set<Integer> response = new HashSet<>();
+		if (slotNumbersByColor.containsKey(color)) {
+			return response = slotNumbersByColor.get(color);
+		}
+
+		return response;
+
+	}
+
 }
