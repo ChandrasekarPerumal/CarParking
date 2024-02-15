@@ -1,5 +1,5 @@
 
-Instructions to followed:<br>
+<b> Instructions to followed: <b><br>
    1.First create the space using 1st end-point<br>
    2.Add some colors data<br>
    3.Then check the other endpoints<br>
