@@ -1,7 +1,7 @@
 
 <b> Instructions to followed: </b><br>
  <i>  1.First create the space using 1st end-point<br>
-   2.Add some colors data<br>
+   2.Add car's data for ticketing data<br>
    3.Then check the other endpoints<br></i>
 
 <b>REST API Endpoints:</b>
