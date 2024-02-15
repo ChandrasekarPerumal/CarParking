@@ -16,6 +16,9 @@ Output screen:
 
 
 Instructions are given below:
+Run the application.
+1. Pull the project and compile and run.
+2. In console enter the inputs as mentioned below.
 
 Input :
 1.  $ create_parking_lot 7
