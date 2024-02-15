@@ -15,19 +15,17 @@ REST API Endpoints:
    <br>
 3. GET : http://localhost:8082/api/v1/parking/status
    Know the parking status
-   <br>
-  
+   <br>  
 4. GET : http://localhost:8082/api/v1/parking/slotno-color/Black
    Get slot numbers where "White" color car's are parked
    <br>
-
-  Get slot number of a car by its registration number "KA-33-EA-0923"
 5. GET : http://localhost:8082/api/v1/parking/slotno-regno/KA-33-EA-0923
-
-  Get Registration numbers list by car color "White"
+   Get slot number of a car by its registration number "KA-33-EA-0923"<br>
+  
 6. GET : http://localhost:8082/api/v1/parking/regno-color/White
-
-  When leaving the parking are remove the car from the slot
+   Get Registration numbers list by car color "White"<br>
+  
 7. DELETE : http://localhost:8082/api/v1/parking/leave/2
+   When leaving the parking are remove the car from the slot<br>
 
 
