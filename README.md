@@ -1,10 +1,10 @@
 
 <b> Instructions to followed: </b><br>
-   1.First create the space using 1st end-point<br>
+ <i>  1.First create the space using 1st end-point<br>
    2.Add some colors data<br>
-   3.Then check the other endpoints<br>
+   3.Then check the other endpoints<br></i>
 
-REST API Endpoints:
+<b>REST API Endpoints:</b>
 
 1. POST : http://localhost:8082/api/v1/parking/create
    {
