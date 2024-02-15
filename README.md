@@ -14,8 +14,9 @@ REST API Endpoints:
    }
    Know the parking status
 3. GET : http://localhost:8082/api/v1/parking/status
+   
 
-  Get slot numbers where "White" color car's are parked 
+  Get slot numbers where "White" color car's are parked <br>
 4. GET : http://localhost:8082/api/v1/parking/slotno-color/Black
 
   Get slot number of a car by its registration number "KA-33-EA-0923"
